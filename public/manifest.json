@@ -1,0 +1,14 @@
+{
+  "name": "DarkMode Extensions",
+  "description": "View sites through simple lenses",
+  "version": "1.0",
+  "manifest_version": 3,
+  "host_permissions": ["<all_urls>"],
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "js": ["contentScript.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
