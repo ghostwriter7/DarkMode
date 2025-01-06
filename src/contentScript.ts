@@ -6,6 +6,14 @@ let ctx: CanvasRenderingContext2D | null = null;
 let level: number;
 let mutationObserver: MutationObserver | null = null;
 
+addEventListener('resize', () => {
+  if (canvas) {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+    renderLenses(level, ctx!);
+  }
+});
+
 document.addEventListener('keydown', ({ key, altKey }: KeyboardEvent) => {
   if (digits.includes(key) && altKey) {
     level = parseInt(key);
